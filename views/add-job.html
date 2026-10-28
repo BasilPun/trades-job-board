@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Add a Job</title>
+</head>
+<body>
+    <main>
+        <h1>Add a Job</h1>
+
+        <form id = "add-job-form">
+            <div id = "job-title-box">
+                <label for = "job-title">Job Title</label>
+                <input type = "text" id = "job-title" name = "job-title">
+                <span class = "err" id = "err-job-title">Job title is required</span>
+            </div>
+
+            <div id = "job-desc-box">
+                <label for = "job-desc">Job Description</label>
+                <textarea rows = "5" id = "job-desc" name = "job-desc"></textarea>
+            </div>
+
+            <div id = "compensation-box">
+                <label for = "compensation">Compensation</label>
+                <input type = "number" id = "compensation" name = "compensation">
+            </div>
+
+            <div id = "date-box">
+                <div id = "start-date-box">
+                    <label for = "start-date">Start Date</label>
+                    <input type = "date" id = "start-date" name = "start-date">
+                </div>
+
+                <div id = "end-date-box">
+                    <label for = "end-date">End Date</label>
+                    <input type = "date" id = "end-date" name = "end-date">
+                </div>
+            </div>
+
+            <div id = "hours-box">
+                <h2>Job Type</h2>
+                <label for = "part-time">
+                    <input type = "checkbox" id = "part-time" name = "job-type[]" value = "part-time">
+                    Part-time
+                </label>
+
+                <label for = "full-time">
+                    <input type = "checkbox" id = "full-time" name = "job-type[]" value = "full-time">
+                    Full-time
+                </label>
+
+                <label for = "internship">
+                    <input type = "checkbox" id = "internship" name = "job-type[]" value = "internship">
+                    Internship
+                </label>
+
+                <span class = "err" id = "err-job-type">Select a job type</span>
+            </div>
+
+            <div id = "location-box">
+                <label for = "job-location">Job Location</label>
+                <input type = "text" id = "job-location" name = "job-location">
+                <span class = "err" id = "err-job-location">Job location is required</span>
+            </div>
+
+            <div id = "link-box">
+                <label for = "job-link">Job Posting Link</label>
+                <input type = "url" id = "job-link" name = "job-link">
+                <span class = "err" id = "err-job-link">Enter a valid URL</span>
+            </div>
+
+            <button type = "submit" id = "add-job-button">Add Job</button>
+        </form>
+    </main>
+</body>
+</html>
