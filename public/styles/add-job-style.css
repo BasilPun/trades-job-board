@@ -1,0 +1,104 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+main{
+    width:70%;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "form";
+}
+
+#header{
+    grid-area: header;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+
+#add-job-form{
+    grid-area: form;
+    display: grid;
+    grid-template-areas: 
+    "job-title-box job-title-box compensation-box"
+    "job-desc-box job-desc-box job-desc-box"
+    "date-box date-box date-box"
+    "hours-box hours-box hours-box"
+    "location-box location-box location-box"
+    "link-box link-box link-box"
+    "submit submit submit"
+    ;
+    gap: 1rem;
+    margin: 2rem;
+}
+
+
+#job-title-box {
+    grid-area: job-title-box;
+}
+
+#compensation-box {
+    grid-area: compensation-box;
+}
+
+#job-desc-box {
+    grid-area: job-desc-box;
+}
+
+#date-box {
+    grid-area: date-box;
+    display: grid;
+    grid-template-areas: "start-date-box 1fr end-date-box";
+}
+
+#start-date-box{
+    grid-area: start-date-box;
+}
+
+#end-date-box{
+    grid-area: end-date-box;
+}
+
+#hours-box {
+    grid-area: hours-box;
+}
+
+#location-box {
+    grid-area: location-box;
+}
+
+#link-box {
+    grid-area: link-box;
+}
+
+#add-job-button {
+    grid-area: submit;
+}
+
+.err{
+    display: none;
+}
+
+#job-title-box,
+#job-desc-box,
+#compensation-box,
+#location-box,
+#link-box,
+#start-date-box,
+#end-date-box {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+

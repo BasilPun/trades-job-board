@@ -5,10 +5,13 @@
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Add a Job</title>
+    <!-- <link rel = "icon" href = "../images/pizza-favicon.png"> -->
+    <link rel = "stylesheet" href = "/styles/add-job-style.css">
+    <script src = "/scripts/add-job-script.js" defer></script>
 </head>
 <body>
     <main>
-        <h1>Add a Job</h1>
+        <h1 id = "header">Add a Job</h1>
 
         <form id = "add-job-form">
             <div id = "job-title-box">
@@ -17,14 +20,14 @@
                 <span class = "err" id = "err-job-title">Job title is required</span>
             </div>
 
-            <div id = "job-desc-box">
-                <label for = "job-desc">Job Description</label>
-                <textarea rows = "5" id = "job-desc" name = "job-desc"></textarea>
-            </div>
-
             <div id = "compensation-box">
                 <label for = "compensation">Compensation</label>
                 <input type = "number" id = "compensation" name = "compensation">
+            </div>
+
+            <div id = "job-desc-box">
+                <label for = "job-desc">Job Description</label>
+                <textarea rows = "5" id = "job-desc" name = "job-desc"></textarea>
             </div>
 
             <div id = "date-box">
