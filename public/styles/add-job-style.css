@@ -84,6 +84,7 @@ main{
 
 .err{
     display: none;
+    color: red;
 }
 
 #job-title-box,
@@ -95,6 +96,10 @@ main{
 #end-date-box {
     display: flex;
     flex-direction: column;
+}
+
+#job-desc{
+    resize: none;
 }
 
 

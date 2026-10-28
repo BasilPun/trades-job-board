@@ -13,7 +13,7 @@
     <main>
         <h1 id = "header">Add a Job</h1>
 
-        <form id = "add-job-form">
+        <form id = "add-job-form" action = "#" method = "post">
             <div id = "job-title-box">
                 <label for = "job-title">Job Title</label>
                 <input type = "text" id = "job-title" name = "job-title">
@@ -32,8 +32,9 @@
 
             <div id = "date-box">
                 <div id = "start-date-box">
-                    <label for = "start-date">Start Date</label>
+                    <label for = "start-date">Post Date</label>
                     <input type = "date" id = "start-date" name = "start-date">
+                    <span class = "err" id = "err-start-date">Posting's post date required</span>
                 </div>
 
                 <div id = "end-date-box">
@@ -58,7 +59,6 @@
                     <input type = "checkbox" id = "internship" name = "job-type[]" value = "internship">
                     Internship
                 </label>
-
                 <span class = "err" id = "err-job-type">Select a job type</span>
             </div>
 

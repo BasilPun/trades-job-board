@@ -3,7 +3,7 @@ import express from 'express';
 const app = express();
 const PORT = 3010;
 
-app.use(express.static('public'));
+app.use(express.static(`public`));
 
 app.get('/', (req, res) =>{
     res.sendFile(`${import.meta.dirname}/views/home.html`)
@@ -12,7 +12,6 @@ app.get('/', (req, res) =>{
 app.get('/add-job', (req, res) =>{
     res.sendFile(`${import.meta.dirname}/views/add-job.html`)
 });
-
 
 app.listen(PORT, () =>{
     console.log(`Server is running at: http://localhost:${PORT}`);
