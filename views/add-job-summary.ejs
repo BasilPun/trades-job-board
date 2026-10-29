@@ -21,10 +21,11 @@
         </div>
         <div id = "specifics">
             <h2>Important Specifics</h2>
-            <p>Job posted at: <%= job['job-start-date'] %></p>
-            <p>Job posting end date: <%= job['job-end-date'] %></p>
+            <p>Job posted at: <%= job['start-date'] %></p>
+            <p>Job posting end date: <%= job['end-date']%></p>
             <p>Job location: <%= job['job-location'] %></p>
             <p>Job link: <%= job['job-link'] %></p>
+            <p>Data created at: <%=job['timestamp'].toLocaleString()%></p>
         </div>
 
          <div id = "button-box">

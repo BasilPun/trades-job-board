@@ -4,8 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+
+    <!-- 2 libraries, jquery has to come first -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
+
+    <!-- jquery data-tables css -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
 </head>
 <body>
-    Test
+    <h1>Jobs</h1>
+    <table id = "jobs-table" class = "display">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Compensation</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Posted Date</th>
+                <th>Expiry Date</th>
+                <th>Location</th>
+                <th>Link</th>
+                <th>Data Created at</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% jobs.forEach(job => { %>
+                <tr>
+                    <td> <%= job['job-title']%> </td>
+                    <td><%= job['compensation']%></td>
+                    <td><%= job['job-desc']%></td>
+                    <td><%= job['job-type']%></td>
+                    <td><%= job['start-date']%></td>
+                    <td><%= job['end-date']%></td>
+                    <td><%= job['job-location']%></td>
+                    <td><%= job['job-link']%></td>
+                    <td><%= job['timestamp'].toLocaleString()%></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
 </body>
+<script>
+    new DataTable('#jobs-table');
+ </script>
 </html>
