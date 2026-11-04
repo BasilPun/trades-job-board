@@ -48,6 +48,12 @@ app.get('/admin', (req, res) =>{
     res.render('admin', {jobs});
 });
 
+app.get('/job-board', (req,res) =>{
+    //get selected trade from home page and route to job-board w needed info
+    const selectedTrade = req.query.trade;
+    res.render('job-board', {selectedTrade});
+})
+
 app.listen(PORT, () =>{
     console.log(`Server is running at: http://localhost:${PORT}`);
 });

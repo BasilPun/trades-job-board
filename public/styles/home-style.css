@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    width: 70%;
+    margin: 2rem auto;
+    padding: 1rem 2rem 2.5rem 2rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    gap: 2rem;
+}
+
+#trades-container{
+    display:flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#trades-container a{
+    font-size: 1.5rem;
+}
