@@ -3,9 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Job Board</title>
+
+    <!-- Must come first -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <!-- Add data table information -->
+    <script src="https://cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
 </head>
+<header>
+    <a href="/login">
+        <button id="login">Login</button>
+    </a>
+    <a href="/signup">
+        <button id="signup">Signup</button>
+    </a>
+</header>
+
 <body>
-    Landing page
+    <h1>Trade Job Board</h1>
+
+
+    <table id="job-table" class="display">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Compensation</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Posted Date</th>
+                <th>Expiry Date</th>
+                <th>Location</th>
+                <th>Link</th>
+                <th>Data Created at</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% jobs.forEach(job => { %>
+                <tr>
+                    <td> <%= job['job-title']%> </td>
+                    <td><%= job['compensation']%></td>
+                    <td><%= job['job-desc']%></td>
+                    <td><%= job['job-type']%></td>
+                    <td><%= job['start-date']%></td>
+                    <td><%= job['end-date']%></td>
+                    <td><%= job['job-location']%></td>
+                    <td><%= job['job-link']%></td>
+                    <td><%= job['timestamp'].toLocaleString()%></td>
+                </tr>
+            <% }); %>
+
+        </tbody>
+
+    </table>
+
+    <script>
+        new DataTable('#job-table');
+    </script>
 </body>
 </html>
