@@ -41,7 +41,128 @@ app.post('/login', (req, res) =>{
     res.redirect('/');
 });
 
-const jobs = [];
+const jobs = [
+    {
+        trade: "mechatronics",
+        "job-title": "Robotics Technician",
+        compensation: 35,
+        "job-desc": "Maintain and troubleshoot industrial robotic systems.",
+        "job-type": ["full-time"],
+        "start-date": "2026-12-01",
+        "end-date": "",
+        "job-location": "Seattle, WA",
+        "job-link": "https://example.com",
+        timestamp: new Date("2026-11-01")
+    },
+    {
+        trade: "mechatronics",
+        "job-title": "Automation Engineering Intern",
+        compensation: 25,
+        "job-desc": "Assist engineers with PLC programming and automation.",
+        "job-type": ["internship"],
+        "start-date": "2027-01-15",
+        "end-date": "2027-05-15",
+        "job-location": "Bellevue, WA",
+        "job-link": "https://example.com",
+        timestamp: new Date("2026-11-02")
+    },
+    {
+        trade: "automotive",
+        "job-title": "Automotive Service Technician",
+        compensation: 29,
+        "job-desc": "Diagnose and repair engines, brakes, and transmissions.",
+        "job-type": ["full-time"],
+        "start-date": "2026-12-10",
+        "end-date": "",
+        "job-location": "Kent, WA",
+        "job-link": "https://example.com",
+        timestamp: new Date("2026-10-28")
+    },
+    {
+        trade: "automotive",
+        "job-title": "Auto Shop Assistant",
+        compensation: 21,
+        "job-desc": "Assist mechanics with vehicle maintenance and inspections.",
+        "job-type": ["part-time"],
+        "start-date": "2026-12-05",
+        "end-date": "",
+        "job-location": "Renton, WA",
+        "job-link": "https://example.com",
+        timestamp: new Date("2026-11-03")
+    },
+    {
+        trade: "welding",
+        "job-title": "MIG Welder",
+        compensation: 32,
+        "job-desc": "Perform MIG welding on structural steel components.",
+        "job-type": ["full-time"],
+        "start-date": "2026-12-15",
+        "end-date": "",
+        "job-location": "Tacoma, WA",
+        "job-link": "https://example.com",
+        timestamp: new Date("2026-10-30")
+    },
+    {
+        trade: "welding",
+        "job-title": "Welding Apprentice",
+        compensation: 23,
+        "job-desc": "Learn TIG and MIG welding under experienced welders.",
+        "job-type": ["internship"],
+        "start-date": "2027-01-10",
+        "end-date": "2027-06-10",
+        "job-location": "Auburn, WA",
+        "job-link": "https://example.com",
+        timestamp: new Date("2026-11-01")
+    },
+    {
+        trade: "manufacturing",
+        "job-title": "CNC Machine Operator",
+        compensation: 28,
+        "job-desc": "Operate CNC machines and inspect manufactured parts.",
+        "job-type": ["full-time"],
+        "start-date": "2026-12-01",
+        "end-date": "",
+        "job-location": "Everett, WA",
+        "job-link": "https://example.com",
+        timestamp: new Date("2026-10-29")
+    },
+    {
+        trade: "manufacturing",
+        "job-title": "Production Assistant",
+        compensation: 22,
+        "job-desc": "Support assembly line operations and quality inspections.",
+        "job-type": ["part-time"],
+        "start-date": "2026-12-20",
+        "end-date": "",
+        "job-location": "Federal Way, WA",
+        "job-link": "https://example.com",
+        timestamp: new Date("2026-11-02")
+    },
+    {
+        trade: "carpentry",
+        "job-title": "Residential Carpenter",
+        compensation: 34,
+        "job-desc": "Construct wooden frames, install doors, and perform renovations.",
+        "job-type": ["full-time"],
+        "start-date": "2026-12-05",
+        "end-date": "",
+        "job-location": "Seattle, WA",
+        "job-link": "https://example.com",
+        timestamp: new Date("2026-10-31")
+    },
+    {
+        trade: "carpentry",
+        "job-title": "Carpentry Apprentice",
+        compensation: 20,
+        "job-desc": "Assist with measuring, cutting, and assembling wood structures.",
+        "job-type": ["internship"],
+        "start-date": "2027-01-05",
+        "end-date": "2027-05-30",
+        "job-location": "Redmond, WA",
+        "job-link": "https://example.com",
+        timestamp: new Date("2026-11-03")
+    }
+];
 const loginInfo = [];
 
 app.get('/admin', (req, res) =>{
