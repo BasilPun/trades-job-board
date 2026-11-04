@@ -11,7 +11,15 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', (req, res) =>{
-    res.render('home')
+    res.render('home', {jobs});
+});
+
+app.get('/login', (req, res) =>{
+    res.render('login');
+});
+
+app.get('/signup', (req, res) =>{
+    res.render('signup');
 });
 
 app.get('/add-job', (req, res) =>{
@@ -26,7 +34,15 @@ app.post('/add-job-summary', (req, res) =>{
     res.render('add-job-summary', {job});
 });
 
+app.post('/login', (req, res) =>{
+    const user = req.body;
+    user.timestamp = new Date();
+    loginInfo.push(user);
+    res.redirect('/');
+});
+
 const jobs = [];
+const loginInfo = [];
 
 app.get('/admin', (req, res) =>{
     res.render('admin', {jobs});

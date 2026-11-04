@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <main>
+        <h1>Login to your account</h1>
+        <p>Don't have an account?</p>
+        <a href="/signup">Click here</a>
+
+
+        <form id="login-form" action = "/login" method = "post">
+            <div class="login-username-container">
+                <span class="err" id="err-username">Username is required</span>
+                <label for="username">Username: </label>
+                <input type="text" id="username" name="username">
+            </div>
+
+            <div class="login-password-container">
+                <span class="err" id="err-password">Password is required</span>
+                <label for="password">Password: </label>
+                <input type="password" id="password" name="password">
+            </div>
+
+             <button type = "submit" id = "login-button">Login</button>
+        </form>
+    </main>
+</body>
+</html>
