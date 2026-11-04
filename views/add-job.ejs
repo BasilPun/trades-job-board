@@ -74,6 +74,18 @@
                 <span class = "err" id = "err-job-link">Enter a valid URL</span>
             </div>
 
+            <div id = "trade-box">
+                <label for="trade">Select a Trade:</label>
+                <select id="trade" name="trade" required>
+                    <option value="none" disabled selected>Choose a trade</option>
+                    <option value="welding">Welding</option>
+                    <option value="automotive">Automotive</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="carpentry">Carpentry</option>
+                    <option value="mechatronics">Mechatronics</option>
+                </select>
+            </div>
+
             <button type = "submit" id = "add-job-button">Add Job</button>
         </form>
     </main>

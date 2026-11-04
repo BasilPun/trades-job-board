@@ -24,12 +24,12 @@
 <body>
     <h1>Trade Job Board</h1>
 
-
     <table id="job-table" class="display">
         <thead>
             <tr>
                 <th>Title</th>
                 <th>Compensation</th>
+                <th>Trade</th>
                 <th>Description</th>
                 <th>Type</th>
                 <th>Posted Date</th>
@@ -42,9 +42,11 @@
 
         <tbody>
             <% jobs.forEach(job => { %>
+            <% if (job.trade == selectedTrade){ %>
                 <tr>
                     <td> <%= job['job-title']%> </td>
                     <td><%= job['compensation']%></td>
+                    <td> <%= job['trade']%> </td>
                     <td><%= job['job-desc']%></td>
                     <td><%= job['job-type']%></td>
                     <td><%= job['start-date']%></td>
@@ -53,7 +55,7 @@
                     <td><%= job['job-link']%></td>
                     <td><%= job['timestamp'].toLocaleString()%></td>
                 </tr>
-            <% }); %>
+            <% }}); %>
 
         </tbody>
 

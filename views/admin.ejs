@@ -18,6 +18,7 @@
         <thead>
             <tr>
                 <th>Title</th>
+                <th>Trade</th>
                 <th>Compensation</th>
                 <th>Description</th>
                 <th>Type</th>
@@ -32,6 +33,7 @@
             <% jobs.forEach(job => { %>
                 <tr>
                     <td> <%= job['job-title']%> </td>
+                    <td><%= job['trade']%></td>
                     <td><%= job['compensation']%></td>
                     <td><%= job['job-desc']%></td>
                     <td><%= job['job-type']%></td>

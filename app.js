@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', (req, res) =>{
-    res.render('home', {jobs});
+    res.render('home');
 });
 
 app.get('/login', (req, res) =>{
@@ -51,7 +51,7 @@ app.get('/admin', (req, res) =>{
 app.get('/job-board', (req,res) =>{
     //get selected trade from home page and route to job-board w needed info
     const selectedTrade = req.query.trade;
-    res.render('job-board', {selectedTrade});
+    res.render('job-board', {selectedTrade, jobs});
 })
 
 app.listen(PORT, () =>{
