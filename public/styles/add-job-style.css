@@ -20,6 +20,7 @@ main{
     grid-area: header;
     text-align: center;
     margin-top: 2rem;
+    color: green;
 }
 
 
@@ -58,7 +59,9 @@ main{
 #date-box {
     grid-area: date-box;
     display: grid;
-    grid-template-areas: "start-date-box 1fr end-date-box";
+    grid-template-areas: "start-date-box end-date-box";
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 #start-date-box{
@@ -83,6 +86,16 @@ main{
 
 #add-job-button {
     grid-area: submit;
+    padding: 0.75rem;
+    background-color: green;
+    color: white;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#add-job-button:hover {
+    background-color: rgb(0, 56, 0);
 }
 
 .err{
@@ -106,7 +119,12 @@ main{
     resize: none;
 }
 
-/* test */
+input, select, textarea {
+    padding: 0.5rem;
+    border: 1px solid green;
+    border-radius: 0.25rem;
+    font: inherit;
+}
 
 
 

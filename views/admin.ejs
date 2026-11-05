@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <%- include('partials/head', { pageTitle: 'Manage Jobs' }) %>
 
     <!-- 2 libraries, jquery has to come first -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -49,8 +47,8 @@
             </tbody>
         </table>
     </main>
-</body>
 <script>
     new DataTable('#admin-job-table');
  </script>
+</body>
 </html>

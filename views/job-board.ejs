@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Board</title>
+    <%- include('partials/head', { pageTitle: 'Find Jobs' }) %>
 
     <!-- Must come first -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <!-- Add data table information -->
     <script src="https://cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/4.1.1/js/dataTables.responsive.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/4.1.1/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="/styles/global.css">
     <link rel = "stylesheet" href = "/styles/job-board-style.css">
 </head>
 <body>
+    <header>
+        <a class="site-name" href="/">Trades Job Board</a>
+        <div id ="login-box">
+            <h2>Log In</h2>
+            <a href="/login">
+                <button id="login">Login</button>
+            </a>
+            <a href="/signup">
+                <button id="signup">Signup</button>
+            </a>
+        </div>
+    </header>
     <main>
         <h1><span id = "capitalise"><%=selectedTrade%></span> Job Board</h1>
 
@@ -44,7 +57,9 @@
                         <td><%= job['start-date']%></td>
                         <td><%= job['end-date']%></td>
                         <td><%= job['job-location']%></td>
-                        <td><%= job['job-link']%></td>
+                        <td>
+                            <a href="<%= job['job-link'] %>" target="_blank" rel="noopener noreferrer">Apply Now</a>
+                        </td>
                         <td><%= job['timestamp'].toLocaleString()%></td>
                     </tr>
                 <% }}); %>
@@ -52,8 +67,21 @@
             </tbody>
         </table>
     </main>
-</body>
+    <footer>
+        <p>Green River College — Trades Job Board</p>
+    </footer>
 <script>
-    new DataTable('#job-table');
+    new DataTable('#job-table', {
+        responsive: true,
+        columnDefs: [
+            {
+                // Apply Now column
+                targets: 8,
+                // Disable sorting
+                orderable: false
+            }
+        ]
+    });
 </script>
+</body>
 </html>

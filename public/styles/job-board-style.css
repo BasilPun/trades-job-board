@@ -15,4 +15,58 @@ main{
     align-items: center;  
     gap: 3rem;
     margin-top: 2rem;
+
+    padding: 0 2rem 2rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+}
+
+h1 {
+    color: green;
+}
+
+#job-table thead {
+    background-color: green;
+    color: white;
+}
+
+#job-table th, #job-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+/* Table sizing */
+#job-table_wrapper {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+}
+
+#job-table a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: green;
+    color: white;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+
+#job-table a:hover {
+    background-color: rgb(0, 56, 0);
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 1rem;
+    }
+
+    h1 {
+        text-align: center;
+    }
 }

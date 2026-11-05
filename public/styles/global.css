@@ -14,3 +14,58 @@ h1, h2, h3 {
     font-family: Impact, sans-serif;
     font-weight: normal;
 }
+
+/****** header stuff ******/
+header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid black;
+}
+/* site name header */
+.site-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: green;
+}
+/* login box styling */
+#login-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#login-box button {
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: white;
+    background-color: green;
+}
+
+#login-box button:hover {
+    background-color: rgb(0, 56, 0);
+}
+
+/****** footer stuff ******/
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid #ccc;
+    margin-top: auto;
+} 
+
+/* MOBILE! */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
