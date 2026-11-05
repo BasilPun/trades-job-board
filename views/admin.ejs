@@ -11,41 +11,44 @@
 
     <!-- jquery data-tables css -->
     <link rel="stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
+    <link rel = "stylesheet" href = "/styles/admin-style.css">
 </head>
 <body>
-    <h1>Jobs</h1>
-    <table id = "admin-job-table" class = "display">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Trade</th>
-                <th>Compensation</th>
-                <th>Description</th>
-                <th>Type</th>
-                <th>Posted Date</th>
-                <th>Expiry Date</th>
-                <th>Location</th>
-                <th>Link</th>
-                <th>Data Created at</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% jobs.forEach(job => { %>
+    <main>
+        <h1>Jobs</h1>
+        <table id = "admin-job-table" class = "display">
+            <thead>
                 <tr>
-                    <td> <%= job['job-title']%> </td>
-                    <td><%= job['trade']%></td>
-                    <td><%= job['compensation']%></td>
-                    <td><%= job['job-desc']%></td>
-                    <td><%= job['job-type']%></td>
-                    <td><%= job['start-date']%></td>
-                    <td><%= job['end-date']%></td>
-                    <td><%= job['job-location']%></td>
-                    <td><%= job['job-link']%></td>
-                    <td><%= job['timestamp'].toLocaleString()%></td>
+                    <th>Title</th>
+                    <th>Trade</th>
+                    <th>Compensation</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Posted Date</th>
+                    <th>Expiry Date</th>
+                    <th>Location</th>
+                    <th>Link</th>
+                    <th>Data Created at</th>
                 </tr>
-            <% }); %>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <% jobs.forEach(job => { %>
+                    <tr>
+                        <td> <%= job['job-title']%> </td>
+                        <td><%= job['trade']%></td>
+                        <td><%= job['compensation']%></td>
+                        <td><%= job['job-desc']%></td>
+                        <td><%= job['job-type']%></td>
+                        <td><%= job['start-date']%></td>
+                        <td><%= job['end-date']%></td>
+                        <td><%= job['job-location']%></td>
+                        <td><%= job['job-link']%></td>
+                        <td><%= job['timestamp'].toLocaleString()%></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </main>
 </body>
 <script>
     new DataTable('#admin-job-table');
