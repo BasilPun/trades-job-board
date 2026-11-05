@@ -1,0 +1,16 @@
+/* 
+General Global Styling across different pages
+
+GRC Typograph Guide Indicates
+https://www.greenriver.edu/campus/campus-resources/college-relations/branding-identity-guide/typography.html
+that IMPACT and ARIAL are the two non licensed fonts they use
+*/
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: Impact, sans-serif;
+    font-weight: normal;
+}
