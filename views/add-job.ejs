@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang = "en">
 <head>
@@ -39,6 +38,7 @@
                 <div id = "end-date-box">
                     <label for = "end-date">End Date</label>
                     <input type = "date" id = "end-date" name = "end-date">
+                    <span class = "err" id = "err-end-date">Enter a valid end date</span>
                 </div>
             </div>
 
@@ -83,6 +83,7 @@
                     <option value="carpentry">Carpentry</option>
                     <option value="mechatronics">Mechatronics</option>
                 </select>
+                <span class = "err" id = "err-trade">Select a trade</span>
             </div>
 
             <button type = "submit" id = "add-job-button">Add Job</button>

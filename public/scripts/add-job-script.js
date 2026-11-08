@@ -10,10 +10,24 @@ document.querySelector('#add-job-form').onsubmit = () =>{
         isValid = false;
     }
 
+    //trade-type
+    let trade = document.querySelector('#trade').value;
+    if (trade == "none") {
+        document.querySelector('#err-trade').style.display = "block";
+        isValid = false;
+    }
+
     //start-date
     let start_date = document.querySelector('#start-date').value;
     if (start_date == "") {
         document.querySelector('#err-start-date').style.display = "block";
+        isValid = false;
+    }
+
+    //end date
+    let end_date = document.querySelector('#end-date').value;
+    if (end_date == "") {
+        document.querySelector('#err-end-date').style.display = "block";
         isValid = false;
     }
 
