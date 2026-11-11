@@ -9,7 +9,7 @@ dotenv.config();
 // city and state data
 import {
     getStatesOfCountry,
-    getCitiesOfState
+    getAllCitiesOfCountry
 } from '@countrystatecity/countries';
 
 // Create a connection pool for sql
@@ -45,14 +45,23 @@ app.get('/signup', (req, res) =>{
 
 app.get('/add-job', async(req, res) =>{
     const states = await getStatesOfCountry('US');
-    res.render('add-job', {states});
+    const us_cities = await getAllCitiesOfCountry('US')
+
+    res.render('add-job', {states, us_cities});
 });
+
+//show city only once state has been chosen to populate data needed
+
 
 app.post('/add-job-summary', (req, res) =>{
     const job = req.body;
-    
-    console.log(job);
 
+    //job location
+    const state = job['job-state'];
+    const city = job['job-city'];
+    job['job-location'] = `${city}, ${state}`;
+
+    console.log(job);
     // Define SQL query to INSERT the new job
     const sql = `INSERT INTO jobs (trade, job-title, conpensation, job-desc, job-type, is_internship, start-date, end-date, 
                 job-location, job-link, timestamp)
@@ -72,9 +81,6 @@ app.post('/add-job-summary', (req, res) =>{
         jobs.job-link,
         jobs.timestamp
     ];
-
-
-
 
     res.render('add-job-summary', {job});
 });
