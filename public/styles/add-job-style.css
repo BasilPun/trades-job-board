@@ -107,7 +107,8 @@ main{
 #job-title-box,
 #job-desc-box,
 #compensation-box,
-#location-box,
+#job-state-box,
+#job-city-box,
 #link-box,
 #start-date-box,
 #end-date-box {
@@ -126,6 +127,20 @@ input, select, textarea {
     font: inherit;
 }
 
+#location-box{
+    display: grid;
+    grid-template-areas: 
+    "state-box city-box";
+    gap: 1rem;
+}
+
+#job-state-box{
+    grid-area: state-box;
+}
+
+#job-city-box{
+    grid-area: city-box;
+}
 
 
 

@@ -39,9 +39,15 @@ document.querySelector('#add-job-form').onsubmit = () =>{
     }
 
     //job-location
-    let job_location = document.querySelector('#job-location').value.trim();
-    if (job_location == ""){
-        document.querySelector('#err-job-location').style.display = "block";
+    let job_state = document.querySelector('#job-state').value.trim();
+    if (job_state == "none") {
+        document.querySelector('#err-job-state').style.display = "block";
+        isValid = false;
+    }
+
+    let job_city = document.querySelector('#job-city').value.trim();
+    if (job_city == "none") {
+        document.querySelector('#err-job-city').style.display = "block";
         isValid = false;
     }
 
