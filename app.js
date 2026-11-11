@@ -6,6 +6,12 @@ import mysql2 from 'mysql2';
 import dotenv from 'dotenv';
 dotenv.config();
 
+// city and state data
+import {
+    getStatesOfCountry,
+    getCitiesOfState
+} from '@countrystatecity/countries';
+
 // Create a connection pool for sql
 const pool = mysql2.createPool({
     host: process.env.DB_HOST,
@@ -37,8 +43,9 @@ app.get('/signup', (req, res) =>{
     res.render('signup');
 });
 
-app.get('/add-job', (req, res) =>{
-    res.render('add-job');
+app.get('/add-job', async(req, res) =>{
+    const states = await getStatesOfCountry('US');
+    res.render('add-job', {states});
 });
 
 app.post('/add-job-summary', (req, res) =>{

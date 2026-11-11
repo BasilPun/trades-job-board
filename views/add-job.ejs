@@ -60,11 +60,29 @@
                 </label>
                 <span class = "err" id = "err-job-type">Select a job type</span>
             </div>
+            
+            <div id="location-box">
+                <h2>Job Location</h2>
+                    <div id = "job-state-box">
+                        <label for="job-state">State</label>
+                        <select id="job-state" name="job-state" required>
+                            <option value="">Select State</option>
 
-            <div id = "location-box">
-                <label for = "job-location">Job Location</label>
-                <input type = "text" id = "job-location" name = "job-location">
-                <span class = "err" id = "err-job-location">Job location is required</span>
+                            <% states.forEach(state => { %>
+                                <option value="<%= state.iso2 %>">
+                                    <%= state.name %>
+                                </option>
+                            <% }); %>
+                        </select>
+                        <span class="err" id="err-job-state">Job state is required</span>
+                    </div>
+                    <div id = "job-city-box">
+                        <label for="job-city">City</label>
+                        <select id="job-city" name="job-city">
+                            <option value="">Select City</option>
+                        </select>
+                        <span class="err" id="err-job-city">Job city is required</span>
+                    </div>
             </div>
 
             <div id = "link-box">
