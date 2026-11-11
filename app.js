@@ -43,9 +43,32 @@ app.get('/add-job', (req, res) =>{
 
 app.post('/add-job-summary', (req, res) =>{
     const job = req.body;
-    job.timestamp = new Date();
-    jobs.push(job);
+    
     console.log(job);
+
+    // Define SQL query to INSERT the new job
+    const sql = `INSERT INTO jobs (trade, job-title, conpensation, job-desc, job-type, is_internship, start-date, end-date, 
+                job-location, job-link, timestamp)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+    // Create an array of parameters from job data
+    const params = [
+        jobs.trade,
+        jobs.job-title,
+        jobs.conpensation,
+        jobs.job-desc,
+        jobs.job-type,
+        jobs.is_internship,
+        jobs.start-Date,
+        jobs.end-Date,
+        jobs.job-location,
+        jobs.job-link,
+        jobs.timestamp
+    ];
+
+
+
+
     res.render('add-job-summary', {job});
 });
 
