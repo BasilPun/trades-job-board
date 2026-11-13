@@ -56,6 +56,8 @@ app.get('/add-job', async(req, res) =>{
 app.post('/add-job-summary', (req, res) =>{
     const job = req.body;
 
+    job.timestamp = new Date();
+
     //job location
     const state = job['job-state'];
     const city = job['job-city'];
@@ -63,23 +65,23 @@ app.post('/add-job-summary', (req, res) =>{
 
     console.log(job);
     // Define SQL query to INSERT the new job
-    const sql = `INSERT INTO jobs (trade, job-title, conpensation, job-desc, job-type, is_internship, start-date, end-date, 
-                job-location, job-link, timestamp)
+    const sql = `INSERT INTO jobs (trade, \`job-title\`, conpensation, \`job-desc\`, \`job-type\`,
+    \`is_internship\`, \`start-date\`, \`end-date\`, \`job-location\`, \`job-link\`, timestamp)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     // Create an array of parameters from job data
     const params = [
-        jobs.trade,
-        jobs.job-title,
-        jobs.conpensation,
-        jobs.job-desc,
-        jobs.job-type,
-        jobs.is_internship,
-        jobs.start-Date,
-        jobs.end-Date,
-        jobs.job-location,
-        jobs.job-link,
-        jobs.timestamp
+        job.trade,
+        job['job-title'],
+        job.conpensation,
+        job['job-desc'],
+        job['job-type'],
+        job['is_internship'],
+        job['start-date'],
+        job['end-date'],
+        job['job-location'],
+        job['job-link'],
+        job.timestamp
     ];
 
     res.render('add-job-summary', {job});
