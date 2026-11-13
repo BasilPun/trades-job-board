@@ -53,7 +53,7 @@ app.get('/add-job', async(req, res) =>{
 //show city only once state has been chosen to populate data needed
 
 
-app.post('/add-job-summary', (req, res) =>{
+app.post('/add-job-summary', async(req, res) =>{
     const job = req.body;
 
     job.timestamp = new Date();
@@ -65,24 +65,32 @@ app.post('/add-job-summary', (req, res) =>{
 
     console.log(job);
     // Define SQL query to INSERT the new job
-    const sql = `INSERT INTO jobs (trade, \`job-title\`, conpensation, \`job-desc\`, \`job-type\`,
-    \`is_internship\`, \`start-date\`, \`end-date\`, \`job-location\`, \`job-link\`, timestamp)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    const sql = `INSERT INTO jobs (trade, \`job-title\`, compensation, \`job-desc\`, \`job-type\`,
+        \`start-date\`, \`end-date\`, \`job-location\`, \`job-link\`, timestamp)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+    //TODO: add job['is_internship'] when internship is its own input/selection in the form
 
     // Create an array of parameters from job data
     const params = [
         job.trade,
         job['job-title'],
-        job.conpensation,
+        job.compensation,
         job['job-desc'],
         job['job-type'],
-        job['is_internship'],
         job['start-date'],
         job['end-date'],
         job['job-location'],
         job['job-link'],
         job.timestamp
     ];
+
+    // Execute the query
+    const [result] = await pool.execute(sql, params);
+
+    // Get the ID from the newly inserted row
+    job.id = result.insertId;
+    console.log("A new row was inserted with ID " + job.id);
 
     res.render('add-job-summary', {job});
 });
