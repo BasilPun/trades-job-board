@@ -64,6 +64,12 @@ app.post('/add-job-summary', async(req, res) =>{
     job['job-location'] = `${city}, ${state}`;
 
     console.log(job);
+
+
+    // Convert the job-type array to a comma-delimited string
+    job['job-type'] = Array.isArray(job['job-type']) ?
+        job['job-type'].join(", ") : "";
+
     // Define SQL query to INSERT the new job
     const sql = `INSERT INTO jobs (trade, \`job-title\`, compensation, \`job-desc\`, \`job-type\`,
         \`start-date\`, \`end-date\`, \`job-location\`, \`job-link\`, timestamp)
