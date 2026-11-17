@@ -64,9 +64,10 @@ app.post('/add-job-summary', async(req, res) =>{
 
     //job age. Minusing dates outputs ms, conver ms -> days
     const start_date = new Date(job['start-date']);
-    const end_date = new Date(job['start-date']);
-    const time_difference = start_date - end_date;
+    const end_date = new Date(job['end-date']);
+    const time_difference = end_date - start_date;
     const days = time_difference / (1000 * 60 * 60 * 24); 
+    job['jobAge'] = days; //logic error. this isn't job age, this is how long the job will be up for
     console.log(days);
 
     // Convert the job-type array to a comma-delimited string
@@ -75,8 +76,8 @@ app.post('/add-job-summary', async(req, res) =>{
 
     // Define SQL query to INSERT the new job
     const sql = `INSERT INTO jobs (trade, \`job-title\`, compensation, \`job-desc\`, \`job-type\`,
-        \`start-date\`, \`end-date\`, \`job-location\`, \`job-link\`, timestamp)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+        \`start-date\`, \`end-date\`, jobAge, is_expired, \`job-location\`, \`job-link\`, timestamp)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     //TODO: add job['is_internship'] when internship is its own input/selection in the form
 
