@@ -66,17 +66,9 @@
 
                     <div id = "job-state-box">
                         <label for="job-state">State</label>
-                        <select id="job-state" name="job-state">
-                            <option value="none">Select State</option>
-
-                            <% states.forEach(state => { %>
-                                <option value="<%= state.iso2 %>">
-                                    <%= state.name %>
-                                </option>
-                            <% }); %>
-
+                        <select id="job-state" name="job-state" disabled>
+                            <option value="WA">WA</option>
                         </select>
-                        <span class="err" id="err-job-state">Job state is required</span>
                     </div>
 
                     <div id = "job-city-box">
@@ -84,7 +76,7 @@
                         <select id="job-city" name="job-city">
                             <option value="none">Select City</option>
 
-                                <% us_cities.forEach(city => { %>
+                                <% wa_cities.forEach(city => { %>
                                 <option value="<%= city.name %>">
                                     <%= city.name %>
                                 </option>

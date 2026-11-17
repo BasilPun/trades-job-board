@@ -7,10 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // city and state data
-import {
-    getStatesOfCountry,
-    getAllCitiesOfCountry
-} from '@countrystatecity/countries';
+import {getCitiesOfState} from '@countrystatecity/countries';
 
 // Create a connection pool for sql
 const pool = mysql2.createPool({
@@ -44,10 +41,10 @@ app.get('/signup', (req, res) =>{
 });
 
 app.get('/add-job', async(req, res) =>{
-    const states = await getStatesOfCountry('US');
-    const us_cities = await getAllCitiesOfCountry('US')
+    const states = "WA";
+    const wa_cities = await getCitiesOfState('US', 'WA');
 
-    res.render('add-job', {states, us_cities});
+    res.render('add-job', {states, wa_cities});
 });
 
 //show city only once state has been chosen to populate data needed

@@ -38,13 +38,7 @@ document.querySelector('#add-job-form').onsubmit = () =>{
         isValid = false;
     }
 
-    //job-location
-    let job_state = document.querySelector('#job-state').value.trim();
-    if (job_state == "none") {
-        document.querySelector('#err-job-state').style.display = "block";
-        isValid = false;
-    }
-
+    //job-location. job-state is fixed.
     let job_city = document.querySelector('#job-city').value.trim();
     if (job_city == "none") {
         document.querySelector('#err-job-city').style.display = "block";
