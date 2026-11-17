@@ -62,6 +62,12 @@ app.post('/add-job-summary', async(req, res) =>{
 
     console.log(job);
 
+    //job age. Minusing dates outputs ms, conver ms -> days
+    const start_date = new Date(job['start-date']);
+    const end_date = new Date(job['start-date']);
+    const time_difference = start_date - end_date;
+    const days = time_difference / (1000 * 60 * 60 * 24); 
+    console.log(days);
 
     // Convert the job-type array to a comma-delimited string
     job['job-type'] = Array.isArray(job['job-type']) ?
