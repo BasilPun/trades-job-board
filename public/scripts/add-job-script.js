@@ -46,21 +46,19 @@ document.querySelector('#add-job-form').onsubmit = () =>{
         isValid = false;
     }
 
-    //job-type
-    let hasChecked = false;
-
-    let job_type_boxes = document.querySelectorAll('#hours-box input')
-    for (let i = 0; i < job_type_boxes.length; i++){
-        if (job_type_boxes[i].checked == true){
-            hasChecked = true;
+    //part-time / full-time 
+    let hour_type_selected = false;
+    let job_type = document.getElementsByName("job-type");
+    for (let i=0; i<job_type.length; i++) {
+        if(job_type[i].checked) {
+            hour_type_selected = true;
         }
     }
 
-    if (!hasChecked){
-        document.querySelector('#err-job-type').style.display = "block";
+    if (!hour_type_selected) {
+        document.getElementById("err-hour-type").style.display = "block";
         isValid = false;
     }
-
 
     return isValid
 }
