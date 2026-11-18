@@ -42,28 +42,34 @@
                 </div>
             </div>
 
-            <div id = "hours-box">
-                <h2>Job Type</h2>
-                <label for = "part-time">
-                    <input type = "checkbox" id = "part-time" name = "job-type[]" value = "part-time">
-                    Part-time
-                </label>
+            <div id="hours-box">
+                <h2>Hours</h2>
+                <div id ="hours-box-2">
+                    <div id = "hour-type">
+                        <label for="part-time">
+                            <input type="radio" id="part-time" name="job-type" value="part-time">
+                            Part-time
+                        </label>
 
-                <label for = "full-time">
-                    <input type = "checkbox" id = "full-time" name = "job-type[]" value = "full-time">
-                    Full-time
-                </label>
+                        <label for="full-time">
+                            <input type="radio" id="full-time" name="job-type" value="full-time">
+                            Full-time
+                        </label>
+                        <span class="err" id="err-hour-type">Select Hours</span>
+                    </div>
 
-                <label for = "internship">
-                    <input type = "checkbox" id = "internship" name = "job-type[]" value = "internship">
-                    Internship
-                </label>
-                <span class = "err" id = "err-job-type">Select a job type</span>
+                    <div id = "internship-box">
+                        <label for="is_internship">
+                            <input type="checkbox" id="is_internship" name="is_internship" value="internship">
+                            Is it an Internship?
+                        </label>
+                    </div>
+                </div>
             </div>
             
             <div id="location-box">
                 <h2>Job Location</h2>
-
+                <div id = "location-box-2">
                     <div id = "job-state-box">
                         <label for="job-state">State</label>
                         <select id="job-state" name="job-state" disabled>
@@ -85,7 +91,7 @@
                         </select>
                         <span class="err" id="err-job-city">Job city is required</span>
                     </div>
-
+                </div>
             </div>
 
             <div id = "link-box">

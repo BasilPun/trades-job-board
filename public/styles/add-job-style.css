@@ -127,7 +127,7 @@ input, select, textarea {
     font: inherit;
 }
 
-#location-box{
+#location-box-2{
     display: grid;
     grid-template-areas: 
     "state-box city-box";
@@ -142,6 +142,20 @@ input, select, textarea {
     grid-area: city-box;
 }
 
+#hours-box-2{
+    display: grid;
+    grid-template-areas: 
+    "hour-type internship-box";
+    gap: 1rem;
+}
+
+#hour-type{
+    grid-area: hour-type;
+}
+
+#internship-box{
+    grid-area: internship-box;
+}
 
 
 

@@ -62,14 +62,17 @@ app.post('/add-job-summary', async(req, res) =>{
 
     console.log(job);
 
-    // Convert the job-type array to a comma-delimited string
-    job['job-type'] = Array.isArray(job['job-type']) ?
-        job['job-type'].join(", ") : "";
+    //internship logic. turn it into boolean
+    if (job['is_internship'] == 'internship') {
+        job['is_internship'] = true;
+    } else {
+        job['is_internship'] = false;
+    }
 
     // Define SQL query to INSERT the new job. TODO: DROP: jobage, isecpired.
-    const sql = `INSERT INTO jobs (trade, \`job-title\`, compensation, \`job-desc\`, \`job-type\`,
+    const sql = `INSERT INTO jobs (trade, \`job-title\`, compensation, \`job-desc\`, \`job-type\`, is_internship,
         \`start-date\`, \`end-date\`, \`job-location\`, \`job-link\`, timestamp)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     //TODO: add job['is_internship'] when internship is its own input/selection in the form
 
@@ -80,6 +83,7 @@ app.post('/add-job-summary', async(req, res) =>{
         job.compensation,
         job['job-desc'],
         job['job-type'],
+        job['is_internship'],
         job['start-date'],
         job['end-date'],
         job['job-location'],
