@@ -62,26 +62,18 @@ app.post('/add-job-summary', async(req, res) =>{
 
     console.log(job);
 
-    //job age. Minusing dates outputs ms, conver ms -> days
-    const start_date = new Date(job['start-date']);
-    const end_date = new Date(job['end-date']);
-    const days_until_expiration = time_difference / (1000 * 60 * 60 * 24); 
-    //if in data table, have to update every day?
-    job['jobDaysTillExpiry'] = days_until_expiration; //logic error. this isn't job age, this is how long the job will be up for
-    //console.log(days);
-
     // Convert the job-type array to a comma-delimited string
     job['job-type'] = Array.isArray(job['job-type']) ?
         job['job-type'].join(", ") : "";
 
-    // Define SQL query to INSERT the new job. TODO: DROP: jobage, isecpired. ADD: jobDaysTillExpiry
+    // Define SQL query to INSERT the new job. TODO: DROP: jobage, isecpired.
     const sql = `INSERT INTO jobs (trade, \`job-title\`, compensation, \`job-desc\`, \`job-type\`,
         \`start-date\`, \`end-date\`, \`job-location\`, \`job-link\`, timestamp)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     //TODO: add job['is_internship'] when internship is its own input/selection in the form
 
-    // Create an array of parameters from job data. TODO: uncomment out param after sql insert updated.
+    // Create an array of parameters from job data.
     const params = [
         job.trade,
         job['job-title'],
@@ -90,7 +82,6 @@ app.post('/add-job-summary', async(req, res) =>{
         job['job-type'],
         job['start-date'],
         job['end-date'],
-        //job.jobDaysTillExpiry,
         job['job-location'],
         job['job-link'],
         job.timestamp

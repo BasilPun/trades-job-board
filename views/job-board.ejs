@@ -35,6 +35,8 @@
                     <th>Type</th>
                     <th>Posted Date</th>
                     <th>Expiry Date</th>
+                    <th>Job Age</th>
+                    <th>isExpired</th>
                     <th>Location</th>
                     <th>Link</th>
                     <th>Data Created at</th>
@@ -42,7 +44,14 @@
             </thead>
 
             <tbody>
+                <% const current_date = new Date(); %>
                 <% jobs.forEach(job => { %>
+                <% const start_date = new Date(job['start-date']); %>
+                <% const end_date = new Date(job['end-date']); %>
+                <% const time_difference = current_date - start_date; %>
+                <% let jobAge =   time_difference / (1000 * 60 * 60 * 24);%>
+                <% jobAge = Math.floor(jobAge); //round it down to ints %>
+                <% const isExpired = current_date > end_date; %>
                 <% if (job.trade == selectedTrade){ %>
                     <tr>
                         <td> <%= job['job-title']%> </td>
@@ -52,6 +61,8 @@
                         <td><%= job['job-type']%></td>
                         <td><%= job['start-date']%></td>
                         <td><%= job['end-date']%></td>
+                        <td><%= jobAge %></td>
+                        <td><%= isExpired %></td>
                         <td><%= job['job-location']%></td>
                         <td>
                             <a href="<%= job['job-link'] %>" target="_blank" rel="noopener noreferrer">Apply Now</a>
