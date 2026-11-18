@@ -32,6 +32,11 @@ app.get('/', (req, res) =>{
     res.render('home');
 });
 
+//trades route
+app.get('/trades', (req, res) => {
+    res.render('trades');
+})
+
 app.get('/login', (req, res) =>{
     res.render('login');
 });

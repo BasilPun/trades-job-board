@@ -14,14 +14,7 @@
     <link rel = "stylesheet" href = "/styles/job-board-style.css">
 </head>
 <body>
-    <header>
-        <a class="site-name" href="/">Trades Job Board</a>
-        <div id ="login-box">
-            <a href="/login">
-                <button id="login">Login</button>
-            </a>
-        </div>
-    </header>
+    <%- include('partials/header') %>
     <main>
         <h1><span id = "capitalise"><%=selectedTrade%></span> Job Board</h1>
 

@@ -41,16 +41,18 @@ header {
     gap: 1rem;
 }
 
-#login-box button {
+#login-box #login {
+    display: inline-block;
     padding: 0.5rem 1rem;
     border: 1px solid black;
     border-radius: 0.5rem;
     cursor: pointer;
     color: white;
     background-color: green;
+    text-decoration: none;
 }
 
-#login-box button:hover {
+#login-box #login:hover {
     background-color: rgb(0, 56, 0);
 }
 
