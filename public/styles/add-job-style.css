@@ -28,7 +28,8 @@ main{
     grid-area: form;
     display: grid;
     grid-template-areas: 
-    "job-title-box trade-box compensation-box"
+    "trade-box trade-box trade-box"
+    "job-title-box company-name-box compensation-box"
     "job-desc-box job-desc-box job-desc-box"
     "date-box date-box date-box"
     "hours-box hours-box hours-box"
@@ -46,6 +47,10 @@ main{
 
 #job-title-box {
     grid-area: job-title-box;
+}
+
+#company-name-box {
+    grid-area: company-name-box;
 }
 
 #compensation-box {
@@ -105,6 +110,7 @@ main{
 
 #trade-box,
 #job-title-box,
+#company-name-box,
 #job-desc-box,
 #compensation-box,
 #job-state-box,

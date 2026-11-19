@@ -10,6 +10,13 @@ document.querySelector('#add-job-form').onsubmit = () =>{
         isValid = false;
     }
 
+    //company-name
+    let company_name = document.querySelector('#company-name').value.trim();
+    if (company_name == ""){
+        document.querySelector('#err-company-name').style.display = "block";
+        isValid = false;
+    }
+
     //trade-type
     let trade = document.querySelector('#trade').value;
     if (trade == "none") {
