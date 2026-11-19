@@ -18,3 +18,8 @@ main{
     "button-box";
     gap: 1rem;
 }
+
+#add-job-button {
+    grid-area: submit;
+    padding: 0.75rem;
+}

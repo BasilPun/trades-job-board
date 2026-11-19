@@ -2,29 +2,33 @@
 <html lang="en">
 <head>
     <%- include('partials/head', { pageTitle: 'Login' }) %>
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/login.css">
 </head>
 <body>
     <main>
-        <h1>Login to your account</h1>
-        <p>Don't have an account?</p>
-        <a href="/signup">Click here</a>
+        <h1>Log in to your account</h1>
 
-
-        <form id="login-form" action = "/login" method = "post">
+        <form id="login-form" action="/login" method="post">
             <div class="login-username-container">
-                <span class="err" id="err-username">Username is required</span>
-                <label for="username">Username: </label>
+                <label for="username">Username</label>
                 <input type="text" id="username" name="username">
+                <span class="err" id="err-username">Username is required</span>
             </div>
 
             <div class="login-password-container">
-                <span class="err" id="err-password">Password is required</span>
-                <label for="password">Password: </label>
+                <label for="password">Password</label>
                 <input type="password" id="password" name="password">
+                <span class="err" id="err-password">Password is required</span>
             </div>
 
-             <button type = "submit" id = "login-button">Login</button>
+            <button type="submit" id="login-button" class="green-button">Login</button>
         </form>
+
+        <div class="signup-box">
+            <p>Don't have an account?</p>
+            <a href="/signup" class="green-button">Sign up</a>
+        </div>
     </main>
 </body>
 </html>

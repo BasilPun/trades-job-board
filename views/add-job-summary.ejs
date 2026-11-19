@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('partials/head', { pageTitle: 'Job Posted' }) %>
+    <link rel="stylesheet" href="/styles/global.css">
     <link rel = "stylesheet" href = "/styles/add-job-summary-style.css">
 
 </head>
@@ -28,13 +29,9 @@
             <p>Data created at: <%=job['timestamp'].toLocaleString()%></p>
         </div>
 
-         <div id = "button-box">
-            <a href = "/admin">
-                <button id = "admin">View all jobs</button>
-            </a>
-            <a href = "/add-job">
-                <button id = "add-job">Add another job</button>
-            </a>
+         <div id="button-box">
+            <a href="/admin" class="green-button">View all jobs</a>
+            <a href="/add-job" class="green-button">Add another job</a>
         </div>
     </main>
 </body>

@@ -87,15 +87,6 @@ main{
 #add-job-button {
     grid-area: submit;
     padding: 0.75rem;
-    background-color: green;
-    color: white;
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-
-#add-job-button:hover {
-    background-color: rgb(0, 56, 0);
 }
 
 .err{

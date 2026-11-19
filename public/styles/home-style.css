@@ -22,25 +22,16 @@ main{
     gap: 2rem;
 }
 
-#trades-container{
-    display:flex;
+#trades-container {
+    display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-#trades-container a{
+#trades-container .green-button {
     font-size: 1.5rem;
     padding: 1rem 2rem;
-    border: 1px solid black;
-    border-radius: 0.5rem;
     text-align: center;
-    text-decoration: none;
-    color: white;
-    background-color: green;
-}
-
-#trades-container a:hover {
-    background-color: rgb(0, 56, 0);
 }
 
 /* MOBILE! */

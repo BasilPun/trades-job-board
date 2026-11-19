@@ -1,0 +1,44 @@
+body > main {
+    box-sizing: border-box;
+    width: calc(100% - 2rem);
+    max-width: 26rem;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+}
+
+h1 {
+    margin: 0 0 1.5rem;
+    text-align: center;
+    color: green;
+}
+
+#login-form {
+    display: grid;
+    gap: 1rem;
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+#login-form input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid green;
+    border-radius: 0.25rem;
+    font: inherit;
+}
+
+#login-button {
+    width: 100%;
+    font: inherit;
+}
+
+.signup-box {
+    margin-top: 1.5rem;
+    text-align: center;
+}

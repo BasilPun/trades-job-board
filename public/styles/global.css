@@ -11,7 +11,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: Impact, sans-serif;
+    font-family: Arial, sans-serif;
     font-weight: normal;
 }
 
@@ -41,7 +41,7 @@ header {
     gap: 1rem;
 }
 
-#login-box #login {
+.green-button {
     display: inline-block;
     padding: 0.5rem 1rem;
     border: 1px solid black;
@@ -52,7 +52,7 @@ header {
     text-decoration: none;
 }
 
-#login-box #login:hover {
+.green-button:hover {
     background-color: rgb(0, 56, 0);
 }
 
@@ -64,10 +64,46 @@ footer {
     margin-top: auto;
 } 
 
-/* MOBILE! */
-@media (max-width: 600px) {
-    header {
+/* MOBILE */
+@media (max-width: 768px) {
+    header,
+    main #add-job-form,
+    main #date-box,
+    main #location-box-2,
+    main #hours-box-2,
+    #button-box {
+        display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    body > main {
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        padding: 1rem;
+        border: none;
+        overflow-wrap: anywhere;
+    }
+
+    main #add-job-form {
+        margin: 1rem 0;
+    }
+
+    main :is(input, select, textarea) {
+        box-sizing: border-box;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    #button-box {
+        text-align: center;
+    }
+
+    #job-table_wrapper,
+    #admin-job-table_wrapper {
+        width: 100%;
+        min-width: 0;
+        overflow-x: auto;
     }
 }
