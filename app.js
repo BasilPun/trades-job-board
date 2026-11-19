@@ -75,16 +75,15 @@ app.post('/add-job-summary', async(req, res) =>{
     }
 
     // Define SQL query to INSERT the new job. TODO: DROP: jobage, isecpired.
-    const sql = `INSERT INTO jobs (trade, \`job-title\`, compensation, \`job-desc\`, \`job-type\`, is_internship,
+    const sql = `INSERT INTO jobs (trade, \`job-title\`, \`company-name\`, compensation, \`job-desc\`, \`job-type\`, is_internship,
         \`start-date\`, \`end-date\`, \`job-location\`, \`job-link\`, timestamp)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
-
-    //TODO: add job['is_internship'] when internship is its own input/selection in the form
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     // Create an array of parameters from job data.
     const params = [
         job.trade,
         job['job-title'],
+        job['company-name'],
         job.compensation,
         job['job-desc'],
         job['job-type'],
