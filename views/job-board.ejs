@@ -65,11 +65,11 @@
 <script>
     new DataTable('#job-table', {
         responsive: true,
-        order: [[6, 'desc']], // Orders by latest posting by default
+        order: [[3, 'desc']], // order by jobs that are expiring soon
         columnDefs: [
             {
                 // Apply Now column
-                targets: 8,
+                targets: 5,
                 // Disable sorting
                 orderable: false
             }
