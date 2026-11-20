@@ -64,13 +64,8 @@ main{
 #date-box {
     grid-area: date-box;
     display: grid;
-    grid-template-areas: "start-date-box end-date-box";
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "end-date-box";
     gap: 1rem;
-}
-
-#start-date-box{
-    grid-area: start-date-box;
 }
 
 #end-date-box{
