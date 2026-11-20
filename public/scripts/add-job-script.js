@@ -39,7 +39,7 @@ document.querySelector('#add-job-form').onsubmit = () =>{
     }
 
     //job-location. job-state is fixed. making disabled false so that undefined doesn't get sent.
-    document.querySelector('#job-state').disabled = false;
+    // document.querySelector('#job-state').disabled = false;
     let job_city = document.querySelector('#job-city').value.trim();
     if (job_city == "none") {
         document.querySelector('#err-job-city').style.display = "block";
