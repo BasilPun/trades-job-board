@@ -24,7 +24,7 @@ header {
     background-color: white;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 50px;
     border-bottom: 1px solid black;
 }
 /* site name header */
@@ -34,12 +34,24 @@ header {
     text-decoration: none;
     color: green;
 }
+
+nav {
+    display: flex;
+    gap: 0.5rem;
+}
 /* login box styling */
-#login-box {
+#login {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
+/* Add-job styling */
+#add-job {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 
 .green-button {
     display: inline-block;

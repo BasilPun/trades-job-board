@@ -94,6 +94,7 @@ main{
     padding: 0.75rem;
 }
 
+
 .err{
     display: none;
     color: red;
@@ -152,6 +153,14 @@ input, select, textarea {
 
 #internship-box{
     grid-area: internship-box;
+}
+
+#go-home {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
 }
 
 
