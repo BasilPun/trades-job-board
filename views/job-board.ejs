@@ -34,7 +34,7 @@
                 <% const current_date = new Date(); %>
                 <% jobs.forEach(job => { %>
                     <% const end_date = new Date(job['end-date']); %>
-                    <% const time_difference = current_date - end_date; %>
+                    <% const time_difference = end_date - current_date; %>
                     <% let days_till_expiry = time_difference / (1000 * 60 * 60 * 24);%>
                     <% const expiring_soon = days_till_expiry <= 3; //if 3 days or less left till expiry, true %>
                     <% const isExpired = current_date > end_date; %>

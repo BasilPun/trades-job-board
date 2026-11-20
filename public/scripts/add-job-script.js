@@ -24,14 +24,7 @@ document.querySelector('#add-job-form').onsubmit = () =>{
         isValid = false;
     }
 
-    //start-date
-    let start_date = document.querySelector('#start-date').value;
-    if (start_date == "") {
-        document.querySelector('#err-start-date').style.display = "block";
-        isValid = false;
-    }
-
-    //end date
+    //apply by date
     let end_date = document.querySelector('#end-date').value;
     if (end_date == "") {
         document.querySelector('#err-end-date').style.display = "block";
